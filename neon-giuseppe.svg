@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="500" viewBox="0 0 1400 500" role="img" aria-labelledby="title desc">
+  <title id="title">Insegna al neon Giuseppe</title>
+  <desc id="desc">Scritta Giuseppe in rosso con bagliore verde stile insegna al neon.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050505" />
+      <stop offset="100%" stop-color="#101010" />
+    </linearGradient>
+
+    <filter id="greenGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur1" />
+      <feColorMatrix in="blur1" type="matrix"
+        values="0 0 0 0 0
+                0 0 0 0 1
+                0 0 0 0 0
+                0 0 0 0.8 0" result="green1"/>
+      <feGaussianBlur in="green1" stdDeviation="14" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="green1"/>
+      </feMerge>
+    </filter>
+
+    <filter id="redNeon" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="r1"/>
+      <feColorMatrix in="r1" type="matrix"
+        values="1 0 0 0 0
+                0 0 0 0 0
+                0 0 0 0 0
+                0 0 0 1 0" result="redCore"/>
+      <feGaussianBlur in="redCore" stdDeviation="5" result="r2"/>
+      <feGaussianBlur in="redCore" stdDeviation="10" result="r3"/>
+      <feMerge>
+        <feMergeNode in="r3"/>
+        <feMergeNode in="r2"/>
+        <feMergeNode in="redCore"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="500" fill="url(#bg)"/>
+
+  <g transform="translate(700 280)">
+    <text x="0" y="0"
+      text-anchor="middle"
+      font-size="170"
+      font-family="'Brush Script MT', 'Pacifico', 'Segoe Script', cursive"
+      letter-spacing="2"
+      fill="#ffffff"
+      opacity="0.15"
+      filter="url(#greenGlow)">Giuseppe</text>
+
+    <text x="0" y="0"
+      text-anchor="middle"
+      font-size="170"
+      font-family="'Brush Script MT', 'Pacifico', 'Segoe Script', cursive"
+      letter-spacing="2"
+      fill="#ff2a2a"
+      filter="url(#redNeon)">Giuseppe</text>
+
+    <text x="0" y="0"
+      text-anchor="middle"
+      font-size="170"
+      font-family="'Brush Script MT', 'Pacifico', 'Segoe Script', cursive"
+      letter-spacing="2"
+      fill="#ff5c5c">Giuseppe</text>
+  </g>
+</svg>
